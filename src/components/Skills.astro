@@ -1,0 +1,65 @@
+---
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["Python", "SQL", "R", "C++", "LaTeX"],
+  },
+  {
+    title: "ML / Deep Learning",
+    skills: ["PyTorch", "JAX", "NumPyro", "scikit-learn", "Keras", "TensorFlow", "SwinV2", "GradCAM"],
+  },
+  {
+    title: "Statistics & Modeling",
+    skills: ["Bayesian Inference", "MCMC", "SEIR Modeling", "Forecasting", "Uncertainty Quantification"],
+  },
+  {
+    title: "Data & Tools",
+    skills: ["NumPy", "SciPy", "Pandas", "Matplotlib", "Git", "SLURM/HPC"],
+  },
+];
+---
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      {skillCategories.map((cat) => (
+        <div class="skill-category">
+          <h3>{cat.title}</h3>
+          <div class="skill-tags">
+            {cat.skills.map((skill) => (
+              <span class="tag">{skill}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

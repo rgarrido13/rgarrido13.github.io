@@ -1,0 +1,156 @@
+---
+const projects = [
+  {
+    title: "Respiratory Disease Early Warning System",
+    description: "Real-time forecasting system to anticipate onsets and peaks of respiratory disease outbreaks across all 50 US states. Built in collaboration with the CDC using transfer learning approaches.",
+    tags: ["PyTorch", "Transfer Learning", "Forecasting", "CDC"],
+    status: "Deployed",
+    link: "https://www.medrxiv.org/content/medrxiv/early/2025/10/13/2025.10.10.25337739.full.pdf",
+    linkLabel: "Read Paper",
+  },
+  {
+    title: "Deep Learning for Diabetic Retinopathy Detection",
+    description: "End-to-end deep learning pipeline using SwinV2 and GradCAM to help clinicians detect and predict diabetic retinopathy progression from retinal images.",
+    tags: ["SwinV2", "GradCAM", "Computer Vision", "PyTorch"],
+    status: "Ongoing",
+    link: null,
+    linkLabel: null,
+  },
+  {
+    title: "Uncertainty Quantification in Outbreak Models",
+    description: "Bayesian/MCMC inference pipeline for SEIR-based epidemiological models applied to real-world surveillance data. Reduces predictive uncertainty and informs public health decision-making.",
+    tags: ["NumPyro", "MCMC", "Bayesian Inference", "SEIR"],
+    status: "Published",
+    link: "https://www.medrxiv.org/content/10.1101/2025.10.09.25337678v2.full.pdf",
+    linkLabel: "Read Paper",
+  },
+  {
+    title: "Job Search Agent",
+    description: "AI-powered agent to automate and streamline the job search process.",
+    tags: ["Python", "LLMs", "Agents"],
+    status: "In Progress",
+    link: null,
+    linkLabel: null,
+  },
+];
+---
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <div class="card project-card">
+          <div class="project-header">
+            <h3>{project.title}</h3>
+            <span class={`status status-${project.status.toLowerCase().replace(' ', '-')}`}>
+              {project.status}
+            </span>
+          </div>
+          <p>{project.description}</p>
+          <div class="project-footer">
+            <div class="tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            {project.link && (
+              <a href={project.link} target="_blank" class="project-link">
+                {project.linkLabel} &rarr;
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .project-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .status {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-deployed {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .status-published {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .status-ongoing {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .status-in-progress {
+    background: #f3e8ff;
+    color: #6b21a8;
+  }
+
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
