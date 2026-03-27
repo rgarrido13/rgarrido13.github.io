@@ -7,6 +7,7 @@
       <p class="hero-greeting">Hi, I'm</p>
       <h1>Raul Garrido Garcia</h1>
       <p class="hero-tagline">Applied ML & Data Science | Health & Epidemiology</p>
+      <p class="hero-affiliation-inline">Northeastern University · Network Science Institute</p>
       <p class="hero-summary">
         PhD candidate in Physics at Northeastern University. I build ML systems and
         data-driven solutions for real-world health applications — from a CDC-deployed
@@ -20,10 +21,6 @@
     </div>
     <div class="hero-image">
       <img src="/headshot.jpeg" alt="Raul Garrido Garcia" />
-      <div class="hero-affiliation">
-        <span>Northeastern University</span>
-        <span>Network Science Institute</span>
-      </div>
     </div>
   </div>
 </section>
@@ -90,19 +87,11 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   }
 
-  .hero-affiliation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 0.15rem;
-  }
-
-  .hero-affiliation span {
-    font-size: 0.85rem;
+  .hero-affiliation-inline {
+    font-size: 0.95rem;
     color: var(--color-text-secondary);
-    font-weight: 500;
-    letter-spacing: 0.01em;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
   }
 
   @media (max-width: 768px) {
