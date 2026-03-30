@@ -26,19 +26,56 @@
         end-to-end pipeline experience to production systems.
       </p>
 
-      <div class="education">
-        <h3>Education</h3>
-        <div class="edu-item">
-          <span class="edu-degree">Ph.D. in Physics (expected)</span>
-          <span class="edu-detail">Northeastern University, Boston MA, May 2027</span>
+      <div class="tabs-section">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="education">Education</button>
+          <button class="tab-btn" data-tab="experience">Experience</button>
         </div>
-        <div class="edu-item">
-          <span class="edu-degree">M.Sc. in Physics</span>
-          <span class="edu-detail">Northeastern University, Boston MA, May 2024</span>
+
+        <div class="tab-content active" id="education">
+          <div class="edu-item">
+            <span class="edu-degree">Ph.D. in Physics (expected)</span>
+            <span class="edu-detail">Northeastern University, Boston MA, May 2027</span>
+          </div>
+          <div class="edu-item">
+            <span class="edu-degree">M.Sc. in Physics</span>
+            <span class="edu-detail">Northeastern University, Boston MA, May 2024</span>
+          </div>
+          <div class="edu-item">
+            <span class="edu-degree">B.S. in Physics</span>
+            <span class="edu-detail">Purdue University Northwest, IN, May 2022</span>
+          </div>
         </div>
-        <div class="edu-item">
-          <span class="edu-degree">B.S. in Physics</span>
-          <span class="edu-detail">Purdue University Northwest, IN, May 2022</span>
+
+        <div class="tab-content" id="experience">
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Research Assistant</span>
+              <span class="exp-duration">05/2023 – Present</span>
+            </div>
+            <span class="exp-company">Northeastern University, Boston, MA</span>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Research Assistant</span>
+              <span class="exp-duration">06/2021 – 09/2021</span>
+            </div>
+            <span class="exp-company">University of California Davis, Davis, CA</span>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Teaching Assistant</span>
+              <span class="exp-duration">09/2022 – 12/2023</span>
+            </div>
+            <span class="exp-company">Northeastern University, Boston, MA</span>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Private Tutor</span>
+              <span class="exp-duration">08/2021 – 05/2022</span>
+            </div>
+            <span class="exp-company">Purdue University Northwest, IN</span>
+          </div>
         </div>
       </div>
     </div>
@@ -56,13 +93,61 @@
     margin-bottom: 2.5rem;
   }
 
-  .education {
+  .tabs-section {
     margin-top: 2rem;
+    max-width: 720px;
   }
 
-  .education h3 {
-    font-size: 1.15rem;
-    margin-bottom: 1rem;
+  .tab-buttons {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .tab-btn {
+    padding: 0.6rem 1.5rem;
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+  }
+
+  .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .tab-btn:hover {
+    color: var(--color-accent);
+  }
+
+  .tab-btn.active {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .tab-btn.active::after {
+    background: var(--color-accent);
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
   }
 
   .edu-item {
@@ -85,4 +170,51 @@
     color: var(--color-text-secondary);
     font-size: 0.9rem;
   }
+
+  .exp-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .exp-item:last-child {
+    border-bottom: none;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exp-role {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .exp-duration {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
 </style>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(tab)?.classList.add('active');
+    });
+  });
+</script>
