@@ -1,0 +1,66 @@
+---
+---
+
+<section id="news">
+  <div class="container">
+    <h2 class="section-title">News</h2>
+    <ul class="news-list">
+      <li class="news-item">
+        <span class="news-date">Jul 2025</span>
+        <span class="news-text">Instructor at the Summer Institute in Statistics and Modeling in Infectious Diseases (SISMID).</span>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Jul 2024</span>
+        <span class="news-text">Awarded the 2024 Halloran Scholarship to attend SISMID.</span>
+      </li>
+      <li class="news-item">
+        <span class="news-date">May 2022</span>
+        <span class="news-text">Received the <a href="https://gliac.org/news/2022/5/9/5_9_2022_930.aspx" target="_blank">2022 GLIAC Post Graduate Scholarship</a> — sole conference-wide recipient, recognized for academic and athletic excellence.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .news-list {
+    list-style: none;
+    max-width: 720px;
+  }
+
+  .news-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .news-item:last-child {
+    border-bottom: none;
+  }
+
+  .news-date {
+    flex-shrink: 0;
+    width: 5.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    padding-top: 0.1rem;
+  }
+
+  .news-text {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .news-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .news-date {
+      width: auto;
+    }
+  }
+</style>
