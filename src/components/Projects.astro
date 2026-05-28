@@ -4,8 +4,8 @@ const projects = [
     title: "Respiratory Disease Early Warning System",
     description: "Built and deployed an ML early warning system with the CDC that monitors respiratory disease outbreaks across all 50 US states in real time. Detected 98% of outbreak onsets 5 weeks in advance with 83% precision, narrowing a historically unpredictable 10-20 week detection window to a consistent 4-6 weeks.",
     tags: ["ML", "Transfer Learning", "Google Trends", "CDC"],
-    statuses: ["Deployed", "Under Review"],
-    link: "https://www.medrxiv.org/content/medrxiv/early/2025/10/13/2025.10.10.25337739.full.pdf",
+    statuses: ["Deployed", "Published"],
+    link: "https://www.nature.com/articles/s41467-026-72655-7",
     linkLabel: "Read Paper",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     title: "Uncertainty Quantification in Outbreak Models",
     description: "Bayesian/MCMC inference pipeline for SEIR-based epidemiological models applied to real-world surveillance data. Reduces predictive uncertainty and informs public health decision-making.",
     tags: ["NumPyro", "MCMC", "Bayesian Inference", "SEIR"],
-    statuses: ["Under Review"],
+    statuses: ["Accepted"],
     link: "https://www.medrxiv.org/content/10.1101/2025.10.09.25337678v2.full.pdf",
 
     linkLabel: "Read Paper",
@@ -122,6 +122,11 @@ const projects = [
   .status-published {
     background: #dbeafe;
     color: #1e40af;
+  }
+
+  .status-accepted {
+    background: #ccfbf1;
+    color: #115e59;
   }
 
   .status-ongoing {
